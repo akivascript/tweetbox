@@ -1,5 +1,4 @@
 require 'cgi'
-require 'RubyPants'
 
 punct_class = '[!"#\$\%\'()*+,\-.\/:;<=>?\@\[\\\\\]\^_`{|}~]'
 
