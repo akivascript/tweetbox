@@ -1,4 +1,5 @@
 require 'cgi'
+require '/Users/akiva/.rvm/gems/ruby-1.9.3-p194@rails3tutorial/gems/twurl-0.8.0/lib/twurl'
 
 punct_class = '[!"#\$\%\'()*+,\-.\/:;<=>?\@\[\\\\\]\^_`{|}~]'
 
@@ -42,4 +43,8 @@ tweet.gsub!(/"/, '“')
 # need to use str.gsub: replacement is > replaced characters
 tweet.gsub!("...","…")
 
-puts tweet
+args = [ "-d",
+				 tweet,
+				 "/1.1/statuses/update.json" ]
+
+Twurl::CLI.run(args)
